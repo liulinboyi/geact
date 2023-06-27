@@ -1,7 +1,7 @@
-type Ref = any;
-type ElementType = any;
-type Key = string | null;
-type Props = {
+export type Ref = any;
+export type ElementType = any;
+export type Key = string | null;
+export type Props = {
 	[key: string]: any;
 	children?: ReactElement;
 };
