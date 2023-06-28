@@ -2,6 +2,7 @@ import typescript from 'rollup-plugin-typescript2';
 import path from 'path';
 import resolve from '@rollup/plugin-babel';
 import babel from '@rollup/plugin-babel';
+import replace from '@rollup/plugin-replace';
 import generatePackageJson from 'rollup-plugin-generate-package-json';
 
 const tsConfig = { tsConfig: 'tsconfig.json' };
@@ -25,6 +26,9 @@ export default [
 		},
 		plugins: [
 			typescript(tsConfig),
+			replace({
+				__DEV__: process.env.NODE_ENV !== 'production'
+			}),
 			resolve(),
 			generatePackageJson({
 				inputFolder: resolvePkgPath('geact', false),

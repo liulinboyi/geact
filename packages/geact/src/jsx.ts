@@ -6,7 +6,7 @@ export type Props = {
 	children?: ReactElement;
 };
 
-interface ReactElement {
+export interface ReactElement {
 	$$typeof: symbol;
 	type: ElementType;
 	key: Key;
@@ -15,7 +15,7 @@ interface ReactElement {
 	__mark: string;
 }
 
-const REACT_ELEMENT_TYPE = Symbol.for('react.element');
+export const REACT_ELEMENT_TYPE = Symbol.for('react.element');
 
 // ReactElement 定义
 const ReactElement = function (

@@ -16,5 +16,5 @@
     "noImplicitReturns": true,
     "skipLibCheck": true
   },
-  "include": ["packages"]
+  "include": ["packages", "types.d.ts"]
 }

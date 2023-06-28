@@ -1,13 +1,17 @@
 import React from 'geact'
 
-const jsx = (
-  <div>
-    <span>demo</span>
-  </div>
-)
+function App() {
+
+  return (
+    <div>
+      <span>hello,</span>
+      <span>geact</span>
+    </div>
+  )
+}
 
 
 
 console.log(React)
-console.log(jsx)
-
+const element = document.querySelector("#root")
+React.createRoot(element).render(App)
