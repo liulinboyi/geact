@@ -531,15 +531,15 @@ const commitMutationEffectsOnFiber = (finishedWork: FiberNode) => {
 
 
 function commitUpdate(finishedWork: FiberNode) {
-	if (__DEV__) {
-		console.log('更新DOM、文本节点内容', finishedWork);
-	}
-	switch (finishedWork.tag) {
-		case HostText:
-			const newContent = finishedWork.pendingProps.content;
-			return commitTextUpdate(finishedWork.stateNode, newContent);
-	}
-	console.error('commitUpdate未支持的类型', finishedWork);
+    if (__DEV__) {
+        console.log('更新DOM、文本节点内容', finishedWork);
+    }
+    switch (finishedWork.tag) {
+        case HostText:
+            const newContent = finishedWork.pendingProps.content;
+            return commitTextUpdate(finishedWork.stateNode, newContent);
+    }
+    console.error('commitUpdate未支持的类型', finishedWork);
 }
 
 const commitMutationEffects = (finishedWork: FiberNode) => {
@@ -668,14 +668,14 @@ const appendChildToContainer = (
 };
 
 const commitTextUpdate = (
-	textIntance: TextInstance,
-	content: string
+    textIntance: TextInstance,
+    content: string
 ) => {
-	textIntance.nodeValue = content;
+    textIntance.nodeValue = content;
 };
 
 const removeChild = (child: Instance, container: Container) => {
-	container.removeChild(child);
+    container.removeChild(child);
 };
 
 const createTextInstance = (content: string) => {
@@ -1170,7 +1170,7 @@ export function createRoot(container: Container) {
 
     return {
         render(element: ReactElement) {
-            updateContainer(element, root);
+            return updateContainer.bind(null, element, root);
         },
     };
 }
